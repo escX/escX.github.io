@@ -1,19 +1,43 @@
 <template>
   <div id="list-side">
     <div class="list-box">
-      <div class="list-item">
+      <div class="list-item" v-for="(project, index) in projects" :key="index">
         <h2>
-          <a href="">vue-colorful-background</a>
+          <a :href="project.homepage">{{ project.name }}</a>
         </h2>
-        <p class="describe">test</p>
+        <p class="describe">{{ project.describe }}</p>
+        <div class="website">
+          <a
+            class="project-website"
+            :href="project.homepage"
+            v-if="project.homepage"
+          >
+            <i class="iconfont icon-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a
+            class="project-website"
+            :href="project.examplepage"
+            v-if="project.examplepage"
+          >
+            <i class="iconfont icon-example"></i>
+            <span>Example</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import { projects } from "../config.json";
 
+export default {
+  data() {
+    return {
+      projects
+    };
+  }
 };
 </script>
 
@@ -34,15 +58,29 @@ export default {
       h2 {
         font-size: 20px;
         margin-top: 0;
-        margin-bottom: 10px;
-        a, &:hover {
+        margin-bottom: 0;
+        a,
+        &:hover,
+        &:focus,
+        &:active {
           color: #333;
-          text-decoration: none;
         }
       }
       .describe {
+        margin-top: 10px;
         color: #999;
-        word-break: break-all;
+        word-break: break-word;
+      }
+      .website {
+        margin-top: 10px;
+        .project-website {
+          & + .project-website {
+            margin-left: 20px;
+          }
+          span {
+            margin-left: 5px;
+          }
+        }
       }
     }
   }

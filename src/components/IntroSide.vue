@@ -1,8 +1,12 @@
 <template>
   <div id="intro-side">
     <div class="intro-top">
-      <h1>escx</h1>
-      <p>MEIN HERZ BRENNT</p>
+      <h1>{{ name }}</h1>
+      <p>{{ describe }}</p>
+      <a class="intro-github" :href="homepage">
+        <i class="iconfont icon-github"></i>
+        <span>GitHub</span>
+      </a>
     </div>
     <div class="intro-bottom">
       <p>&copy;&nbsp;2019&nbsp;-&nbsp;present&nbsp;escX</p>
@@ -11,8 +15,16 @@
 </template>
 
 <script>
-export default {
+import { name, describe, homepage } from "../config.json";
 
+export default {
+  data() {
+    return {
+      name,
+      describe,
+      homepage
+    };
+  }
 };
 </script>
 
@@ -25,6 +37,13 @@ export default {
   .intro-top {
     width: 250px;
     float: right;
+    .intro-github {
+      display: block;
+      margin-top: 10px;
+      span {
+        margin-left: 5px;
+      }
+    }
   }
   .intro-bottom {
     position: absolute;

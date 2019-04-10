@@ -6,18 +6,19 @@
 </template>
 
 <script>
-import IntroSide from './components/IntroSide';
-import ListSide from './components/ListSide';
+import IntroSide from "./components/IntroSide";
+import ListSide from "./components/ListSide";
 
 export default {
   components: {
-    'intro-side': IntroSide,
-    'list-side': ListSide
+    "intro-side": IntroSide,
+    "list-side": ListSide
   }
 };
 </script>
 
 <style lang="less">
+@import url(./font/iconfont.css);
 #app {
   height: 100%;
   min-width: 1000px;
