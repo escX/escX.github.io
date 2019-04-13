@@ -5,15 +5,26 @@
   "projects": [
     {
       "name": "color-palette-picker",
-      "describe": "make a colorful background by vue directive",
-      "homepage": "https://github.com/escx/vue-colorful-background",
+      "describe": "A flexible color palette picker",
+      "homepage": "https://github.com/escx/color-palette-picker",
       "examplepage": "https://escx.github.io/color-palette-picker"
     },
     {
       "name": "vue-colorful-background",
-      "describe": "color palette picker",
+      "describe": "make a colorful background with vue directive",
       "homepage": "https://github.com/escx/vue-colorful-background",
       "examplepage": "https://escx.github.io/vue-colorful-background"
+    },
+    {
+      "name": "vue-inline-loading",
+      "describe": "Vue directive for show loading in a container",
+      "homepage": "https://github.com/escx/vue-inline-loading",
+      "examplepage": "https://escx.github.io/vue-inline-loading"
+    },
+    {
+      "name": "project-html-template",
+      "describe": "Html template for project page",
+      "homepage": "https://github.com/escx/project-html-template"
     },
     {
       "name": "js-library-webpack-template",
