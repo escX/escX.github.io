@@ -11,7 +11,7 @@
     },
     {
       "name": "vue-colorful-background",
-      "describe": "make a colorful background with vue directive",
+      "describe": "Make a colorful background with vue directive",
       "homepage": "https://github.com/escx/vue-colorful-background",
       "examplepage": "https://escx.github.io/vue-colorful-background"
     },
@@ -28,7 +28,7 @@
     },
     {
       "name": "js-library-webpack-template",
-      "describe": "a template of Javascript class library built by webpack",
+      "describe": "A template of Javascript class library built with webpack",
       "homepage": "https://github.com/escx/js-library-webpack-template"
     }
   ]
