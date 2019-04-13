@@ -37,6 +37,7 @@ export default {
   .intro-top {
     width: 250px;
     float: right;
+    padding-top: 20px;
     .intro-github {
       display: block;
       margin-top: 10px;
