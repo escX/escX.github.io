@@ -1,11 +1,16 @@
 <template>
   <div id="list-side">
     <div class="list-box">
-      <div class="list-item" v-for="(project, index) in projects" :key="index">
+      <div
+        class="list-item"
+        v-for="(project, index) in projects"
+        :key="index"
+        v-loading="!project.loaded"
+      >
         <h2>
           <a :href="project.homepage">{{ project.name }}</a>
         </h2>
-        <p class="describe">{{ project.describe }}</p>
+        <p class="describe" v-if="project.describe">{{ project.describe }}</p>
         <div class="website">
           <a
             class="project-website"
@@ -30,13 +35,29 @@
 </template>
 
 <script>
-import { projects } from "../config.json";
+import { projects } from "../config";
+import { getProjectInfo } from "../api";
 
 export default {
   data() {
     return {
       projects
     };
+  },
+  created() {
+    this.getInfo();
+  },
+  methods: {
+    getInfo() {
+      this.projects.forEach(project => {
+        getProjectInfo(project.name).then(response => {
+          if (response.status === 200 && response.statusText === "OK") {
+            Object.assign(project, { loaded: true }, response.data);
+            this.$forceUpdate();
+          }
+        });
+      });
+    }
   }
 };
 </script>
@@ -55,6 +76,7 @@ export default {
       background-color: #fff;
       padding: 15px 25px;
       margin: 20px 0;
+      min-height: 127.6px;
       h2 {
         font-size: 20px;
         margin-top: 0;

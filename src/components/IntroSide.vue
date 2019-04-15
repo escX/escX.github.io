@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { name, describe, homepage } from "../config.json";
+import { name, describe, homepage } from "../config";
 
 export default {
   data() {
