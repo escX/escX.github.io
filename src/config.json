@@ -5,8 +5,6 @@
   "projects": [
     {"name": "color-palette-picker"},
     {"name": "vue-colorful-background"},
-    {"name": "vue-inline-loading"},
-    {"name": "project-html-template"},
-    {"name": "js-library-webpack-template"}
+    {"name": "vue-inline-loading"}
   ]
 }

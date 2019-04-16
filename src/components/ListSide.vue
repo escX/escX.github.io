@@ -3,7 +3,7 @@
     <div class="list-box">
       <div
         class="list-item"
-        v-for="(project, index) in computedProj"
+        v-for="(project, index) in projects"
         :key="index"
         v-loading="!project.loaded"
       >
@@ -12,10 +12,7 @@
         </h2>
         <p class="describe" v-if="project.describe">{{ project.describe }}</p>
         <div class="website">
-          <a
-            class="project-website"
-            :href="project.home"
-          >
+          <a class="project-website" :href="project.home" v-if="project.home">
             <i class="iconfont icon-github"></i>
             <span>GitHub</span>
           </a>
@@ -42,11 +39,6 @@ export default {
     return {
       projects
     };
-  },
-  computed: {
-    computedProj() {
-      return this.projects.filter(project => typeof project.home === 'string' && project.home !== '');
-    }
   },
   created() {
     this.getInfo();
