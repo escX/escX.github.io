@@ -47,7 +47,7 @@ export default {
     getInfo() {
       this.projects.forEach(project => {
         getProjectInfo(project.name).then(response => {
-          if (response.status === 200 && response.statusText === "OK") {
+          if (response.status === 200) {
             Object.assign(project, { loaded: true }, response.data);
             this.$forceUpdate();
           }
