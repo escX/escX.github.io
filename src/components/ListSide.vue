@@ -46,12 +46,20 @@ export default {
   methods: {
     getInfo() {
       this.projects.forEach(project => {
-        getProjectInfo(project.name).then(response => {
-          if (response.status === 200) {
-            Object.assign(project, { loaded: true }, response.data);
+        getProjectInfo(project.name)
+          .then(response => {
+            if (response.status === 200) {
+              Object.assign(project, { loaded: true }, response.data);
+              this.$forceUpdate();
+            } else {
+              Object.assign(project, { loaded: true });
+              this.$forceUpdate();
+            }
+          })
+          .catch(() => {
+            Object.assign(project, { loaded: true });
             this.$forceUpdate();
-          }
-        });
+          });
       });
     }
   }

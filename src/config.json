@@ -3,8 +3,23 @@
   "describe": "MEIN HERZ BRENNT",
   "homepage": "https://github.com/escx",
   "projects": [
-    {"name": "color-palette-picker"},
-    {"name": "vue-colorful-background"},
-    {"name": "vue-inline-loading"}
+    {
+      "name": "color-palette-picker",
+      "describe": "A flexible color palette picker",
+      "home": "https://github.com/escX/color-palette-picker",
+      "example": "https://escx.github.io/color-palette-picker"
+    },
+    {
+      "name": "vue-colorful-background",
+      "describe": "make a colorful background with vue directive",
+      "home": "https://github.com/escX/vue-colorful-background",
+      "example": "https://escx.github.io/vue-colorful-background"
+    },
+    {
+      "name": "vue-inline-loading",
+      "describe": "Vue directive for show loading in a container",
+      "home": "https://github.com/escX/vue-inline-loading",
+      "example": "https://escx.github.io/vue-inline-loading"
+    }
   ]
 }
